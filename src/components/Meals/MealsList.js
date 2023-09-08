@@ -14,6 +14,7 @@ const MealsList = ({ meals }) => {
                     {meals.map((meal, index) => (
                         <MealsListLitem
                             key={index}
+                            id={meal.name + "-" + index}
                             name={meal.name}
                             description={meal.description}
                             price={meal.price}

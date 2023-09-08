@@ -1,9 +1,13 @@
 import style from "./Button.module.scss";
 import React from "react";
 
-const Button = ({ type, children, onClick, bump, icon: Icon, badge }) => {
+const Button = ({ type, children, onClick, bump, icon: Icon, badge, small }) => {
     return (
-        <div className={`${style["button"]} ${bump ? style["button--bump"] : ""}`} type={type} onClick={onClick}>
+        <div
+            className={`${style["button"]} ${bump ? style["button--bump"] : ""} ${small ? style["button--small"] : ""}`}
+            type={type}
+            onClick={onClick}
+        >
             {Icon ? (
                 <div className={`${style["button__icon"]}`}>
                     <Icon />

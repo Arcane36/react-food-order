@@ -5,7 +5,6 @@ import headerStyles from "./Header.module.scss";
 import mealImg from "../../assets/meals.jpg";
 
 const Header = () => {
-    console.log(headerStyles);
     return (
         <header className={headerStyles["header"]}>
             <div className={headerStyles["header__bar"]}>

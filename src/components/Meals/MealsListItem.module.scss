@@ -1,9 +1,15 @@
 .meal-list-item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin: 1rem;
+    gap: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
     &__headline {
         margin: 0 0 0.25rem 0;

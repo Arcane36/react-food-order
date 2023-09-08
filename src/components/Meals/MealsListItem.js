@@ -1,6 +1,7 @@
+import { MealsAddToCart } from "./MealsAddToCart";
 import styles from "./MealsListItem.module.scss";
 
-const MealsListLitem = ({ name, description, price }) => {
+const MealsListLitem = ({ name, description, price, id }) => {
     let formatOptions = {
         style: "currency",
         currency: "CZK",
@@ -15,6 +16,7 @@ const MealsListLitem = ({ name, description, price }) => {
                 <div className={styles["meal-list-item__description"]}>{description}</div>
                 <div className={styles["meal-list-item__price"]}>{formattedPrice.format(price)}</div>
             </div>
+            <MealsAddToCart id={id} />
         </li>
     );
 };

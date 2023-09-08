@@ -1,0 +1,10 @@
+.addToCart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+        align-items: flex-end;
+    }
+}
