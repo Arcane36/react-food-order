@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../UI/Button";
 import Modal from "../UI/Modal";
 import Cart from "../Cart/Cart";
@@ -10,6 +10,7 @@ import mealImg from "../../assets/meals.jpg";
 
 const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [buttonIsHighlighted, setButtonIsHighlighted] = useState(false);
     const cartContext = useContext(CartContext);
 
     const numOfCartItems = cartContext.items.reduce((currentNum, item) => {
@@ -20,11 +21,31 @@ const Header = () => {
         setIsModalOpen(!isModalOpen);
     };
 
+    useEffect(() => {
+        if (cartContext.items === 0) {
+            return;
+        }
+        setButtonIsHighlighted(true);
+
+        const timer = setTimeout(() => {
+            setButtonIsHighlighted(false);
+        }, 300);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [cartContext.items]);
+
     return (
         <header className={headerStyles["header"]}>
             <div className={headerStyles["header__bar"]}>
                 <h1 className={headerStyles["header__headline"]}>ReactMeals</h1>
-                <Button badge={numOfCartItems} icon={CartIcon} onClick={modalToggleHandler}>
+                <Button
+                    badge={numOfCartItems}
+                    icon={CartIcon}
+                    onClick={modalToggleHandler}
+                    bump={buttonIsHighlighted ? true : false}
+                >
                     Your cart
                 </Button>
             </div>
