@@ -35,6 +35,7 @@
     }
 
     &--small {
+        display: inline-block;
         background-color: #8a2b06;
         border: 1px solid #8a2b06;
         padding: 0.25rem 2rem;
@@ -46,6 +47,11 @@
             background-color: #641e03;
             border-color: #641e03;
         }
+    }
+
+    &--alt {
+        color: white;
+        background-color: black;
     }
 }
 

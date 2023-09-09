@@ -1,8 +1,8 @@
 import React from "react";
 import MealsSummary from "./MealsDescription";
+import MealsListLitem from "./MealsListItem";
 
 import styles from "./MealsList.module.scss";
-import MealsListLitem from "./MealsListItem";
 
 const MealsList = ({ meals }) => {
     return (
