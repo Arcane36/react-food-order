@@ -13,6 +13,11 @@
         margin: 0;
         padding: 0;
     }
+
+    &--error {
+        text-align: center;
+        color: red;
+    }
 }
 
 @keyframes meals-appear {

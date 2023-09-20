@@ -1,0 +1,39 @@
+.checkout {
+    margin: 1rem 0;
+    max-height: 19rem;
+    overflow: auto;
+
+    &__group {
+        margin-bottom: 0.5rem;
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        input {
+            font: inherit;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 20rem;
+            max-width: 100%;
+        }
+
+        &--invalid {
+            & > label {
+                color: #ca3e51;
+            }
+            & > input {
+                border-color: #aa0b20;
+                background-color: #ffeff1;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+}
